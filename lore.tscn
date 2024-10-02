@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bar0h2bknonbt"]
+
+[node name="Lore" type="Node2D"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 144.0
+offset_top = 86.0
+offset_right = 961.0
+offset_bottom = 455.0
+theme_override_font_sizes/normal_font_size = 25
+text = "Do you know who Skugg is? You see, Skugg was a very special squirrel given to Ben Franklin by his wife's friend when they were having their first child. Ben Franklin named this squirrel Skugg, and when the squirrel unfortunately died, Ben Franklin coined the term \"snug as a bug in a rug\" to explain how Skugg died peacefully.
+
+Now let me tell you of a breakthrough. You need to understand that first, Skugg survived in this game, and that two he is now *living* his best life as snug as a smug bug in a thug rug drugged chugging on a big mug with a jug!"
