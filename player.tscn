@@ -1,6 +1,7 @@
-[gd_scene load_steps=27 format=3 uid="uid://c4geg5nllqf86"]
+[gd_scene load_steps=28 format=3 uid="uid://de465ig0rvvdp"]
 
 [ext_resource type="Texture2D" uid="uid://bkbl1gt24r37v" path="res://Squirrel Sprite Sheet.png" id="1_0jfkx"]
+[ext_resource type="Script" path="res://player.gd" id="1_3a3ie"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_skhhe"]
 atlas = ExtResource("1_0jfkx")
@@ -175,7 +176,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_npgjl")
 }],
 "loop": true,
-"name": &"walking",
+"name": &"walk",
 "speed": 5.0
 }]
 
@@ -186,12 +187,13 @@ radius = 132.061
 radius = 75.71
 
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_3a3ie")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(187, 52)
 scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_38a4m")
-animation = &"idle"
+animation = &"walk"
 autoplay = "idle"
 
 [node name="playerhitbox" type="Area2D" parent="."]
