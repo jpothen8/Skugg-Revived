@@ -1,8 +1,8 @@
 [gd_scene load_steps=16 format=3 uid="uid://cs0o28xwy3poc"]
 
-[ext_resource type="Script" path="res://enemy.gd" id="1_0ulde"]
-[ext_resource type="Texture2D" uid="uid://bkbl1gt24r37v" path="res://Squirrel Sprite Sheet.png" id="2_wi1ty"]
-[ext_resource type="Texture2D" uid="uid://d01q3pn5k4vw2" path="res://red.jpg" id="3_da5lc"]
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_0ulde"]
+[ext_resource type="Texture2D" uid="uid://bkbl1gt24r37v" path="res://assets/Squirrel Sprite Sheet.png" id="2_wi1ty"]
+[ext_resource type="Texture2D" uid="uid://d01q3pn5k4vw2" path="res://assets/red.jpg" id="3_da5lc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5q2fg"]
 atlas = ExtResource("2_wi1ty")

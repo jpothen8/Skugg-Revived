@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://w3o81t2pe78k"]
 
-[ext_resource type="Script" path="res://start.gd" id="1_falv2"]
+[ext_resource type="Script" path="res://scripts/start.gd" id="1_84wol"]
 
 [node name="Start" type="Node2D"]
-script = ExtResource("1_falv2")
+script = ExtResource("1_84wol")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_left = 75.0

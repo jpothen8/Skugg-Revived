@@ -1,7 +1,6 @@
 extends Node2D
 
-var value = 0
-var timer = 0
+var total_time = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -10,14 +9,11 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	timer += delta
-	if timer >= 1:
-		if value >= 8:
-			get_tree().change_scene_to_file("res://start.tscn")
-		$ProgressBar.value = value
-		value = 0
-		timer = 0
+	total_time += delta
+	$ProgressBar.value = 15.0 - total_time
 
 
-func _on_button_pressed() -> void:
-	value += 1
+func _on_back_pressed() -> void:
+	if total_time > 15.0:
+		get_tree().change_scene_to_file("res://scenes/troll.tscn")
+	total_time -= 1.0

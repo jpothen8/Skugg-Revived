@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://bar0h2bknonbt"]
 
-[ext_resource type="Script" path="res://lore.gd" id="1_vpftx"]
+[ext_resource type="Script" path="res://scripts/lore.gd" id="1_yw1n7"]
 
 [node name="Lore" type="Node2D"]
-script = ExtResource("1_vpftx")
+script = ExtResource("1_yw1n7")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_left = 104.0
