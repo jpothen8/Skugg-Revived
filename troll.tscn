@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://dr8wh2ov63q0r"]
+
+[ext_resource type="Script" path="res://troll.gd" id="1_57vuj"]
+
+[node name="troll" type="Node2D"]
+script = ExtResource("1_57vuj")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 56.0
+offset_top = 96.0
+offset_right = 1104.0
+offset_bottom = 496.0
+theme_override_font_sizes/normal_font_size = 25
+text = "You thought it was that easy to go back to the start screen?
+
+I know for a fact you didn't fully read Skugg's lore. Now Skugg is angry. This is not good because Skugg is as snug as a smug bug in a thug rug drugged chugging a big mug with a jug.
+
+Fix your actions NOW by clicking this button at least at 8 clicks per second. If you ask questions, you are a certified goofy goober by Skugg.
+
+Also Skugg told me you tried to press the quit button. Why would you do such a thing to Skugg? Did I not tell you how snug he is?"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 448.0
+offset_top = 536.0
+offset_right = 712.0
+offset_bottom = 584.0
+theme_override_font_sizes/font_size = 25
+text = "Click Now!"
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = 8.0
+offset_top = 24.0
+offset_right = 1144.0
+offset_bottom = 72.0
+max_value = 10.0
+show_percentage = false
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
