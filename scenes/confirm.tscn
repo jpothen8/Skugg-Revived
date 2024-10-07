@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://cv3mu2tl08fo7"]
+
+[ext_resource type="Script" path="res://scripts/confirm.gd" id="1_7ratq"]
+
+[node name="confirm" type="Node2D"]
+script = ExtResource("1_7ratq")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 170.0
+offset_top = 102.0
+offset_right = 948.0
+offset_bottom = 284.0
+theme_override_font_sizes/normal_font_size = 25
+text = "Are you sure you don't want to read Skugg's lore? Skugg will be very sad if you don't read his lore. After all, this is Skugg Revived.
+
+Do you want to make Skugg sad?"
+
+[node name="play" type="Button" parent="."]
+offset_left = 183.0
+offset_top = 330.0
+offset_right = 982.0
+offset_bottom = 415.0
+theme_override_font_sizes/font_size = 30
+text = "Yeah, I don't care about Skugg"
+
+[node name="lore" type="Button" parent="."]
+offset_left = 183.0
+offset_top = 453.0
+offset_right = 982.0
+offset_bottom = 538.0
+theme_override_font_sizes/font_size = 30
+text = "Nah, I changed my mind, I wanna read his lore!"
+
+[connection signal="mouse_entered" from="play" to="." method="_on_play_mouse_entered"]
+[connection signal="mouse_exited" from="play" to="." method="_on_play_mouse_exited"]
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="mouse_entered" from="lore" to="." method="_on_lore_mouse_entered"]
+[connection signal="pressed" from="lore" to="." method="_on_lore_pressed"]

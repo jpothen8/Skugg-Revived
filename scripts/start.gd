@@ -12,7 +12,10 @@ func _process(delta: float) -> void:
 
 
 func _on_play_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/world.tscn")
+	if not Global.went_through_confirm_screen:
+		get_tree().change_scene_to_file("res://scenes/confirm.tscn")
+	else:
+		get_tree().change_scene_to_file("res://scenes/world.tscn")
 
 
 func _on_info_pressed() -> void:
