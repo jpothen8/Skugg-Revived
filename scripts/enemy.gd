@@ -5,9 +5,17 @@ var player_chase = false
 var player = null 
 var health = 100
 var player_inattack_zone = false
-
+var bullet = load("res://scenes/bullet.tscn")
 
 func _physics_process(delta):
+	rotate(.05)
+	
+	var b = bullet.instantiate()
+	b.position.x += 10
+	b.rotation = self.rotation
+	get_parent().add_child(b)
+	
+	
 	deal_with_damage()
 	if player_chase:
 		position += (player.position - position)/speed
