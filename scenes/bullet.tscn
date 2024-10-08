@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://c66o74ucmvls1"]
+
+[ext_resource type="Script" path="res://scripts/bullet.gd" id="1_k20bn"]
+[ext_resource type="Texture2D" uid="uid://d12v6r6vujio3" path="res://assets/Projectiles/bolt1_strip.png" id="2_6x1km"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6lhef"]
+atlas = ExtResource("2_6x1km")
+region = Rect2(0, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rmsv1"]
+atlas = ExtResource("2_6x1km")
+region = Rect2(10, 0, 10, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ps8hq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6lhef")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rmsv1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2v7pu"]
+radius = 5.0
+
+[node name="Bullet" type="Node2D"]
+position = Vector2(39, 49)
+scale = Vector2(2.5, 2.5)
+script = ExtResource("1_k20bn")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ps8hq")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_2v7pu")
