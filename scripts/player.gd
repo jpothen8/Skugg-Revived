@@ -3,6 +3,8 @@ extends CharacterBody2D
 var speed = 500
 var current_dir = "right"
 
+func _ready() -> void:
+	get_tree().set_auto_accept_quit(true)
 
 func _physics_process(delta: float) -> void:
 	player_movement(delta)

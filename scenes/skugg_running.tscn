@@ -1,0 +1,83 @@
+[gd_scene load_steps=13 format=3 uid="uid://wvhlu3dnehps"]
+
+[ext_resource type="Texture2D" uid="uid://bkbl1gt24r37v" path="res://assets/Squirrel Sprite Sheet.png" id="1_jgj7v"]
+[ext_resource type="Script" path="res://scenes/skugg_running.gd" id="1_kr0bf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pi467"]
+atlas = ExtResource("1_jgj7v")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dcnp7"]
+atlas = ExtResource("1_jgj7v")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r65ge"]
+atlas = ExtResource("1_jgj7v")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fv7og"]
+atlas = ExtResource("1_jgj7v")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qa4du"]
+atlas = ExtResource("1_jgj7v")
+region = Rect2(128, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ic0ac"]
+atlas = ExtResource("1_jgj7v")
+region = Rect2(160, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ycma"]
+atlas = ExtResource("1_jgj7v")
+region = Rect2(192, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_beaam"]
+atlas = ExtResource("1_jgj7v")
+region = Rect2(224, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qjip0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pi467")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcnp7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r65ge")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fv7og")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qa4du")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ic0ac")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ycma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_beaam")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t8s38"]
+
+[node name="skugg_running" type="CharacterBody2D"]
+position = Vector2(561, 296)
+scale = Vector2(3, 3)
+script = ExtResource("1_kr0bf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qjip0")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.333344, 10.6667)
+shape = SubResource("CircleShape2D_t8s38")

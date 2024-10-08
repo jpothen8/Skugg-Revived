@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 	timer += delta
 	if timer >= 1:
 		if value >= 8:
-			get_tree().change_scene_to_file("res://scenes/start.tscn")
+			get_tree().change_scene_to_file("res://scenes/catch_skugg.tscn")
 		$ProgressBar.value = value
 		value = 0
 		timer = 0
