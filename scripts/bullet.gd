@@ -1,6 +1,6 @@
 extends Node2D
 
-var dir = Vector2(float(1),float(0))
+var dir = Vector2(1.0,0.0)
 var bullet_speed = 10
 
 
@@ -11,10 +11,13 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	self.position += Vector2(float(1),float(0)).rotated(rotation)
+	self.position += Vector2(1.0, 0.0).rotated(rotation)
 	self.position += dir * delta * bullet_speed
-
-	
+	if($RayCast2D.is_colliding()):
+		if(($RayCast2D.get_collider()).is_in_group("player")):
+			print("Hit!")
+			queue_free()
+		
 
 func screen_exited():
 	get_parent().remove_child(self)

@@ -6,10 +6,16 @@
 
 [node name="World" type="Node2D"]
 
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 647.0
+
 [node name="Player" parent="." instance=ExtResource("1_7sp3p")]
+scale = Vector2(0.25, 0.25)
 
 [node name="Bullet" parent="." instance=ExtResource("3_inp8t")]
 position = Vector2(30, -32)
+scale = Vector2(1.5, 1.5)
 
 [node name="enemy" parent="." instance=ExtResource("2_hd7g0")]
 position = Vector2(476, 197)

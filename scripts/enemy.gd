@@ -8,10 +8,10 @@ var player_inattack_zone = false
 var bullet = load("res://scenes/bullet.tscn")
 
 func _physics_process(delta):
-	rotate(.05)
+	rotate(.2)
 	
 	var b = bullet.instantiate()
-	b.position.x += 10
+	b.position.x = self.position.x + 10
 	b.rotation = self.rotation
 	get_parent().add_child(b)
 	
@@ -44,13 +44,9 @@ func _on_enemy_hitbox_body_exited(body):
 		player_inattack_zone = false
 
 func deal_with_damage():
-	if player_inattack_zone == true:
-		health -= 25
-		$healthbar.set_value_no_signal(health)
-		print("Slime health: " + str(health))
-
+	
 		if health <= 0: 
-			$AnimatedSprite2D.play("defeat")
+
 			self.queue_free()
 
 
