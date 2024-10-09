@@ -1,6 +1,6 @@
 extends Node2D
 
-var timer = 10.0
+var timer = 1.0
 
 var skugg = preload("res://scenes/skugg_running.tscn")
 
@@ -21,3 +21,6 @@ func _process(delta: float) -> void:
 			instance.visible = true
 			add_child(instance)
 			Global.skugg_off_screen = false
+		if Global.skugg_pressed:
+			Global.skugg_pressed = false
+			print("LIGMA")

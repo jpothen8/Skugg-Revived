@@ -1,14 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://ckbu86d0thman"]
+[gd_scene load_steps=2 format=3 uid="uid://ckbu86d0thman"]
 
-[ext_resource type="Script" path="res://scenes/catch_skugg.gd" id="1_axr4n"]
-[ext_resource type="PackedScene" uid="uid://wvhlu3dnehps" path="res://scenes/skugg_running.tscn" id="2_6xyqa"]
+[ext_resource type="Script" path="res://scripts/catch_skugg.gd" id="1_axr4n"]
 
 [node name="catch_skugg" type="Node2D"]
 script = ExtResource("1_axr4n")
-
-[node name="skugg_running" parent="." instance=ExtResource("2_6xyqa")]
-visible = false
-position = Vector2(-92, 452)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_left = 208.0

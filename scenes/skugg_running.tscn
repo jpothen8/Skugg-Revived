@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://wvhlu3dnehps"]
 
 [ext_resource type="Texture2D" uid="uid://bkbl1gt24r37v" path="res://assets/Squirrel Sprite Sheet.png" id="1_jgj7v"]
-[ext_resource type="Script" path="res://scenes/skugg_running.gd" id="1_kr0bf"]
+[ext_resource type="Script" path="res://scripts/skugg_running.gd" id="1_kr0bf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pi467"]
 atlas = ExtResource("1_jgj7v")
@@ -81,3 +81,13 @@ autoplay = "default"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.333344, 10.6667)
 shape = SubResource("CircleShape2D_t8s38")
+
+[node name="hitbox" type="Button" parent="."]
+light_mask = 0
+visibility_layer = 0
+offset_left = -12.0
+offset_top = 2.0
+offset_right = 10.0
+offset_bottom = 16.0
+
+[connection signal="pressed" from="hitbox" to="." method="_on_hitbox_pressed"]
