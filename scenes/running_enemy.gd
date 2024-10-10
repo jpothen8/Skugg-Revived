@@ -9,6 +9,7 @@ var bullet = load("res://scenes/bullet.tscn")
 
 func _physics_process(delta):
 	rotate(.2)
+	$AnimatedSprite2D.rotate(-.2)
 	self.position.x += speed
 	var b = bullet.instantiate()
 	b.position.x = self.position.x + 10

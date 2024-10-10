@@ -11,6 +11,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+
+			
+			
 	self.position += Vector2(1.0, 0.0).rotated(rotation)
 	self.position += dir * delta * bullet_speed
 	if($RayCast2D.is_colliding()):
@@ -19,6 +22,8 @@ func _process(delta):
 			queue_free()
 		
 
-func screen_exited():
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	get_parent().remove_child(self)
 	queue_free()
+	
