@@ -7,20 +7,24 @@ var health = 100
 var player_inattack_zone = false
 var bullet = load("res://scenes/bullet.tscn")
 
+var added_rotation = 0.0
+
 func _physics_process(delta):
-	rotate(.2)
-	
+	added_rotation += 0.2
+	#self.rotate(.2)
+	#$AnimatedSprite2D.rotate(-.2)
+	#$healthbar.rotation -= 0.2
 	var b = bullet.instantiate()
 	b.position.x = self.position.x + 10
-	b.rotation = self.rotation
+	b.rotation = added_rotation
 	get_parent().add_child(b)
 	
 	
 	deal_with_damage()
-	if player_chase:
+	if player_chase and health > 0:
 		position += (player.position - position)/speed
 		$AnimatedSprite2D.play("walk")
-	else:
+	elif health > 0:
 		$AnimatedSprite2D.play("idle")
 	move_and_slide()
 	
@@ -46,10 +50,14 @@ func _on_enemy_hitbox_body_exited(body):
 func deal_with_damage():
 	
 		if health <= 0: 
-
-			self.queue_free()
+			$AnimatedSprite2D.play("defeat")
+			
 
 
 func _on_timer_timeout() -> void:
-	health -= 5
+	health -= 25
 	$healthbar.set_value_no_signal(health)
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	self.queue_free()

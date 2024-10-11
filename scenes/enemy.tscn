@@ -1,8 +1,28 @@
-[gd_scene load_steps=21 format=3 uid="uid://cs0o28xwy3poc"]
+[gd_scene load_steps=26 format=3 uid="uid://cs0o28xwy3poc"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_0ulde"]
 [ext_resource type="Texture2D" uid="uid://4vstifykrfai" path="res://assets/enemy_sprite.png" id="2_yhi8v"]
 [ext_resource type="Texture2D" uid="uid://d01q3pn5k4vw2" path="res://assets/red.jpg" id="3_da5lc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jb5kv"]
+atlas = ExtResource("2_yhi8v")
+region = Rect2(256, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v42l1"]
+atlas = ExtResource("2_yhi8v")
+region = Rect2(320, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qrb3y"]
+atlas = ExtResource("2_yhi8v")
+region = Rect2(384, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ak63"]
+atlas = ExtResource("2_yhi8v")
+region = Rect2(448, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvgja"]
+atlas = ExtResource("2_yhi8v")
+region = Rect2(512, 320, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6orki"]
 atlas = ExtResource("2_yhi8v")
@@ -54,6 +74,26 @@ region = Rect2(320, 64, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g85ob"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jb5kv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v42l1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qrb3y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ak63")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvgja")
+}],
+"loop": false,
+"name": &"defeat",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6orki")
@@ -115,12 +155,13 @@ fill_to = Vector2(0, 0.00970874)
 
 [node name="enemy" type="CharacterBody2D"]
 position = Vector2(417, 262)
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_0ulde")
-metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_g85ob")
-animation = &"walk"
+animation = &"defeat"
 autoplay = "idle"
 
 [node name="detection_area" type="Area2D" parent="."]
@@ -143,4 +184,5 @@ texture_progress = ExtResource("3_da5lc")
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

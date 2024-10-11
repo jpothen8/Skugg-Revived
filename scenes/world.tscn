@@ -20,5 +20,8 @@ scale = Vector2(1.5, 1.5)
 
 [node name="RunningEnemy" parent="." instance=ExtResource("4_dfkc5")]
 position = Vector2(121, 55)
+collision_layer = 1
+collision_mask = 1
+metadata/_edit_group_ = true
 
 [node name="enemy" parent="." instance=ExtResource("2_hd7g0")]
