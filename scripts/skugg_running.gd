@@ -10,11 +10,12 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	self.position.x += speed
-	
-	if (self.position.x > 1200 and self.position.y > 0):
-		self.queue_free()
-		Global.skugg_off_screen = true
 
 
 func _on_hitbox_pressed() -> void:
 	Global.skugg_pressed = true
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	self.queue_free()
+	Global.skugg_off_screen = true
