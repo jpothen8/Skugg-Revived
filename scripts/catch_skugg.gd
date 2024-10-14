@@ -9,6 +9,7 @@ var playing_goat = false
 var playing_bing = false
 
 var player_done = false
+var finished_game = 0.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:	
@@ -21,7 +22,9 @@ func _process(delta: float) -> void:
 		$RichTextLabel.text = "Skugg is happy now! He wants to play with you in "+ str(round(timer)) + " seconds! Try to tickle him!"
 	else:
 		if player_done:
-			$RichTextLabel.text = "Oh my Skibbity! You got Skugg."
+			$RichTextLabel.text = "Oh my Skibbity! You got Skugg. Now you can play the game!"
+			if timer < finished_game - 10.0:
+				get_tree().change_scene_to_file("res://scenes/world.tscn")
 		elif timer < -50.0:
 			$RichTextLabel.text = ""
 			$bingchilling.stop()
@@ -57,5 +60,4 @@ func _process(delta: float) -> void:
 		if Global.skugg_pressed:
 			Global.skugg_pressed = false
 			player_done = true
-			print("LIGMA")
-		
+			finished_game = timer
