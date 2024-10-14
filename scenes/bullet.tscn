@@ -1,24 +1,24 @@
 [gd_scene load_steps=7 format=3 uid="uid://c66o74ucmvls1"]
 
 [ext_resource type="Script" path="res://scripts/bullet.gd" id="1_k20bn"]
-[ext_resource type="Texture2D" uid="uid://d12v6r6vujio3" path="res://assets/Projectiles/bolt1_strip.png" id="2_6x1km"]
+[ext_resource type="Texture2D" uid="uid://dnkckmtkw6c54" path="res://assets/Projectiles/bullet1_strip.png" id="2_vyyw2"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6lhef"]
-atlas = ExtResource("2_6x1km")
+[sub_resource type="AtlasTexture" id="AtlasTexture_gty6j"]
+atlas = ExtResource("2_vyyw2")
 region = Rect2(0, 0, 10, 10)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rmsv1"]
-atlas = ExtResource("2_6x1km")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ct64i"]
+atlas = ExtResource("2_vyyw2")
 region = Rect2(10, 0, 10, 10)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ps8hq"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6lhef")
+"texture": SubResource("AtlasTexture_gty6j")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rmsv1")
+"texture": SubResource("AtlasTexture_ct64i")
 }],
 "loop": true,
 "name": &"default",

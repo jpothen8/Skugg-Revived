@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://cq7qcc16d7tue"]
+
+[ext_resource type="Script" path="res://scripts/skugg_bullet.gd" id="1_2lndb"]
+[ext_resource type="Texture2D" uid="uid://d12v6r6vujio3" path="res://assets/Projectiles/bolt1_strip.png" id="2_nyh1f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6lhef"]
+atlas = ExtResource("2_nyh1f")
+region = Rect2(0, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rmsv1"]
+atlas = ExtResource("2_nyh1f")
+region = Rect2(10, 0, 10, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dys05"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6lhef")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rmsv1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kfldv"]
+radius = 5.0
+
+[node name="Skugg_bullet" type="Node2D"]
+scale = Vector2(1.25, 1.25)
+script = ExtResource("1_2lndb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_dys05")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1.52588e-06, 0)
+shape = SubResource("CircleShape2D_kfldv")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(-3.2, -3.6)
+target_position = Vector2(6.4, 7.2)
+collide_with_areas = true
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-4.76837e-07, 4.76837e-07)
+scale = Vector2(0.48, 0.48)
