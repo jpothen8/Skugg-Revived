@@ -2,13 +2,21 @@ extends CharacterBody2D
 
 var speed = 500
 var current_dir = "right"
+var bullet = load("res://scenes/skugg_bullet.tscn")
 
 func _ready() -> void:
 	get_tree().set_auto_accept_quit(true)
 
 func _physics_process(delta: float) -> void:
 	player_movement(delta)
-	
+	var b 
+	if(Input.is_action_just_pressed("shoot")):
+		print("SKUGGITY")
+		b = bullet.instantiate() 
+		b.position.x = self.position.x
+		b.position.y = self.position.y + 5
+		get_parent().add_child(b)
+		
 func player_movement(delta):
 	#Grid based player movement logic
 	if Input.is_action_pressed("ui_right"):
