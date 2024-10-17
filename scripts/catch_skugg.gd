@@ -1,6 +1,6 @@
 extends Node2D
 
-var timer = 1.0
+var timer = 10.0
 
 var skugg = preload("res://scenes/skugg_running.tscn")
 
@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 	else:
 		if player_done:
 			$RichTextLabel.text = "Oh my Skibbity! You got Skugg. Now you can play the game!"
-			if timer < finished_game - 10.0:
+			if timer < finished_game - 5.0:
 				get_tree().change_scene_to_file("res://scenes/world.tscn")
 		elif timer < -50.0:
 			$RichTextLabel.text = ""
