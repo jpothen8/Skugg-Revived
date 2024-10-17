@@ -55,6 +55,5 @@ func deal_with_damage():
 
 
 func _on_timer_timeout() -> void:
-	
-	health -= 25
+
 	$healthbar.set_value_no_signal(health)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cs0o28xwy3poc"]
+[gd_scene load_steps=27 format=3 uid="uid://cs0o28xwy3poc"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_0ulde"]
 [ext_resource type="Texture2D" uid="uid://4vstifykrfai" path="res://assets/enemy_sprite.png" id="2_yhi8v"]
@@ -153,7 +153,10 @@ gradient = SubResource("Gradient_vu4vp")
 height = 32
 fill_to = Vector2(0, 0.00970874)
 
-[node name="enemy" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mippi"]
+size = Vector2(32, 34)
+
+[node name="enemy" type="CharacterBody2D" groups=["enemy"]]
 position = Vector2(417, 262)
 collision_layer = 2
 collision_mask = 2
@@ -169,7 +172,9 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area"]
 shape = SubResource("CircleShape2D_fk7qi")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
 shape = SubResource("RectangleShape2D_sndli")
 
 [node name="healthbar" type="TextureProgressBar" parent="."]
@@ -184,5 +189,11 @@ texture_progress = ExtResource("3_da5lc")
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 11)
+shape = SubResource("RectangleShape2D_mippi")
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
