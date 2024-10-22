@@ -13,8 +13,8 @@ func _physics_process(delta):
 	$healthbar.set_value_no_signal(health)
 	added_rotation += 0.2
 	var b = bullet.instantiate()
-	#b.position.x = self.position.x + 10
-	#b.rotation = added_rotation
+	b.position.x = self.position.x + 10
+	b.rotation = added_rotation
 	get_parent().add_child(b)
 	if (health <= 0):
 		self.queue_free()
@@ -39,10 +39,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	self.queue_free()
 
 
-func _on_hitbox_body_entered(body):
-	print("colliding")
-	if(body.is_in_group("PlayerBullet")):
-		health -=25
+
 
 
 func _on_hitbox_area_entered(area: Area2D) -> void:

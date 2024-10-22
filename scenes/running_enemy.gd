@@ -42,11 +42,6 @@ func _on_enemy_hitbox_body_entered(body):
 	if body.is_in_group("player"):
 		player_inattack_zone = true
 
-
-func _on_enemy_hitbox_body_exited(body):
-	if body.is_in_group("player"):
-		player_inattack_zone = false
-
 func deal_with_damage():
 	
 		if health <= 0: 
@@ -57,3 +52,11 @@ func deal_with_damage():
 func _on_timer_timeout() -> void:
 
 	$healthbar.set_value_no_signal(health)
+
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	if(area.is_in_group("PlayerBullet")):
+		health -=25
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	speed = -speed

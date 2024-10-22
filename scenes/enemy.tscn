@@ -145,6 +145,7 @@ animations = [{
 radius = 36.0139
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sndli"]
+size = Vector2(33, 41.5)
 
 [sub_resource type="Gradient" id="Gradient_vu4vp"]
 
@@ -175,6 +176,7 @@ shape = SubResource("CircleShape2D_fk7qi")
 [node name="hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(-2.5, 11.75)
 shape = SubResource("RectangleShape2D_sndli")
 
 [node name="healthbar" type="TextureProgressBar" parent="."]
