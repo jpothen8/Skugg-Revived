@@ -15,7 +15,10 @@ func _process(delta):
 			
 			
 	self.position += Vector2(1.0, 0.0).rotated(rotation)
+	
 	self.position += dir * delta * bullet_speed
+	
+		
 	if($RayCast2D.is_colliding() and not $RayCast2D.get_collider() == null):
 		if(($RayCast2D.get_collider()).is_in_group("player")):
 			print("Hit!")

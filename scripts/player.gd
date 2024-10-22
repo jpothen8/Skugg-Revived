@@ -10,13 +10,20 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	player_movement(delta)
 	var b 
-	if(Input.is_action_just_pressed("shoot")):
+	if(Input.is_action_just_pressed("shoot") and current_dir == "right"):
 		print("SKUGGITY")
+		Global.bullet_dir = "right"
 		b = bullet.instantiate() 
 		b.position.x = self.position.x
 		b.position.y = self.position.y + 5
 		get_parent().add_child(b)
-		
+	elif (Input.is_action_just_pressed("shoot") and current_dir == "left"):
+		print("LEFT")
+		Global.bullet_dir = "left"
+		b = bullet.instantiate() 
+		b.position.x = self.position.x
+		b.position.y = self.position.y + 5
+		get_parent().add_child(b)
 func player_movement(delta):
 	#Grid based player movement logic
 	if Input.is_action_pressed("ui_right"):
@@ -31,12 +38,12 @@ func player_movement(delta):
 		velocity.x = -speed
 		velocity.y = 0
 	elif Input.is_action_pressed("ui_up"):
-		current_dir = "up"
+		#current_dir = "up"
 		play_animation(1)
 		velocity.x = 0
 		velocity.y = -speed
 	elif Input.is_action_pressed("ui_down"):
-		current_dir = "down"
+		#current_dir = "down"
 		play_animation(1)
 		velocity.x = 0
 		velocity.y = speed
