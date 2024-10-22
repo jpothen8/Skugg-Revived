@@ -68,6 +68,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t8s38"]
+radius = 20.6694
 
 [node name="skugg_running" type="CharacterBody2D"]
 position = Vector2(561, 296)
@@ -75,11 +76,13 @@ scale = Vector2(3, 3)
 script = ExtResource("1_kr0bf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(13, 12.6667)
+scale = Vector2(1.8125, 1.79167)
 sprite_frames = SubResource("SpriteFrames_qjip0")
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.333344, 10.6667)
+position = Vector2(11.3333, 25.3333)
 shape = SubResource("CircleShape2D_t8s38")
 
 [node name="hitbox" type="Button" parent="."]
@@ -91,8 +94,8 @@ offset_right = 10.0
 offset_bottom = 16.0
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(-0.499995, 9.16666)
-scale = Vector2(1.08333, 0.883333)
+position = Vector2(10.6667, 28.6667)
+scale = Vector2(1.90833, 1.38333)
 
 [connection signal="pressed" from="hitbox" to="." method="_on_hitbox_pressed"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

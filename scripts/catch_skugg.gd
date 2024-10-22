@@ -1,6 +1,6 @@
 extends Node2D
 
-var timer = 10.0
+var timer = 5.0
 
 var skugg = preload("res://scenes/skugg_running.tscn")
 
