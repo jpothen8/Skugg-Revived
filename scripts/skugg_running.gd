@@ -1,7 +1,7 @@
 extends CharacterBody2D
 		
 var rng = RandomNumberGenerator.new()
-var speed = 27.5
+var speed = RandomNumberGenerator.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -9,7 +9,8 @@ func _ready() -> void:
 	self.position.y = rng.randf_range(50.0, 600.0)
 
 func _physics_process(delta: float) -> void:
-	self.position.x += speed
+	self.position.x += speed.randf_range(20.0, 30.0)
+	
 
 
 func _on_hitbox_pressed() -> void:

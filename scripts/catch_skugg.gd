@@ -11,12 +11,22 @@ var playing_bing = false
 var player_done = false
 var finished_game = 0.0
 
+var random = RandomNumberGenerator.new()
+
+var counter = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:	
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	counter += 1
+	
+	if (counter % 75 == 0):
+		get_window().size = Vector2i(random.randi_range(1000, 1500), random.randi_range(400, 800))
+		counter = 0
+	
 	timer -= delta
 	if timer > 0.0:
 		$RichTextLabel.text = "Skugg is happy now! He wants to play with you in "+ str(round(timer)) + " seconds! Try to tickle him!"
