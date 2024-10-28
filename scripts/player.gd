@@ -21,6 +21,7 @@ func _physics_process(delta: float) -> void:
 		print("LEFT")
 		Global.bullet_dir = "left"
 		b = bullet.instantiate() 
+		b.change_dir("left")
 		b.position.x = self.position.x
 		b.position.y = self.position.y + 5
 		get_parent().add_child(b)
