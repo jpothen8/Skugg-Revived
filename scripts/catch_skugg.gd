@@ -15,14 +15,21 @@ var random = RandomNumberGenerator.new()
 
 var counter = 0
 
-var frames_for_movement = 15
+var frames_for_movement = 60
+
+var fullsizeX = DisplayServer.screen_get_size().x
+var fullsizeY = DisplayServer.screen_get_size().y
 
 var prevGoal = Vector2i(1152, 648)
-var goal = Vector2i(random.randi_range(1000, 1500), random.randi_range(400, 800))
+var goal = Vector2i(random.randi_range(0.10 * fullsizeX, 0.90 * fullsizeX), random.randi_range(0.10 * fullsizeY, 0.90 * fullsizeY))
+
+var prevGoalPos = Vector2i(50, 50)
+var goalPos = Vector2i(random.randi_range(0.0 * fullsizeX, 0.25 * fullsizeX), random.randi_range(0.0 * fullsizeY, 0.25 * fullsizeY))
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:	
 	get_window().unresizable = true
+	get_window().borderless = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:	
@@ -30,14 +37,21 @@ func _process(delta: float) -> void:
 	
 	if (counter % frames_for_movement == 0):
 		prevGoal = goal
-		goal = Vector2i(random.randi_range(1000, 1500), random.randi_range(400, 800))
+		goal =  Vector2i(random.randi_range(0.10 * fullsizeX, 0.90 * fullsizeX), random.randi_range(0.10 * fullsizeY, 0.90 * fullsizeY))
+		prevGoalPos = goalPos
+		goalPos = Vector2i(random.randi_range(0.0 * fullsizeX, 0.10 * fullsizeX), random.randi_range(0.0 * fullsizeY, 0.10 * fullsizeY))
 		counter = 0
 		
 	get_window().size = Vector2i(
 		roundi(prevGoal.x + (goal.x - prevGoal.x) * (counter / float(frames_for_movement))), 
 		roundi(prevGoal.y + (goal.y - prevGoal.y) * (counter / float(frames_for_movement)))
 	)
-			
+	
+	get_window().position = Vector2i(
+		roundi(prevGoalPos.x + (goalPos.x - prevGoalPos.x) * (counter / float(frames_for_movement))), 
+		roundi(prevGoalPos.y + (goalPos.y - prevGoalPos.y) * (counter / float(frames_for_movement)))
+	)
+				
 	timer -= delta
 	if timer > 0.0:
 		$RichTextLabel.text = "Skugg is happy now! He wants to play with you in "+ str(round(timer)) + " seconds! Try to tickle him!"
@@ -82,5 +96,6 @@ func _process(delta: float) -> void:
 			Global.skugg_pressed = false
 			player_done = true
 			get_window().unresizable = false
+			get_window().borderless = false
 			get_window().size = Vector2i(1152, 648)
 			finished_game = timer

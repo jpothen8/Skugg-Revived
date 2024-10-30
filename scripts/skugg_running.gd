@@ -9,7 +9,7 @@ func _ready() -> void:
 	self.position.y = rng.randf_range(50.0, 600.0)
 
 func _physics_process(delta: float) -> void:
-	self.position.x += speed.randf_range(5.0, 15.0)
+	self.position.x += speed.randf_range(10.0, 20.0)
 	
 
 
