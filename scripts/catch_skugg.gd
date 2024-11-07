@@ -24,7 +24,7 @@ var prevGoal = Vector2i(1152, 648)
 var goal = Vector2i(random.randi_range(0.10 * fullsizeX, 0.90 * fullsizeX), random.randi_range(0.10 * fullsizeY, 0.90 * fullsizeY))
 
 var prevGoalPos = Vector2i(50, 50)
-var goalPos = Vector2i(random.randi_range(0.0 * fullsizeX, 0.25 * fullsizeX), random.randi_range(0.0 * fullsizeY, 0.25 * fullsizeY))
+var goalPos = Vector2i(random.randi_range(0.0 * fullsizeX, 0.90 * fullsizeX), random.randi_range(0.0 * fullsizeY, 0.90 * fullsizeY))
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:	
