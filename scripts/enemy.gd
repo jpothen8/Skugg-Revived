@@ -14,9 +14,7 @@ func _physics_process(delta):
 	$healthbar.set_value_no_signal(health)
 	
 	if (health <= 0):
-		self.queue_free()
-	
-	deal_with_damage()
+		deal_with_damage()
 	if player_chase and health > 0:
 		position += (player.position - position)/speed
 		$AnimatedSprite2D.play("walk")
@@ -40,7 +38,6 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
-	print("colliding")
 	if(area.is_in_group("PlayerBullet")):
 		health -=25
 
@@ -123,3 +120,7 @@ func rotating_attack():
 		added_rotation += PI/10
 		get_parent().add_child(b)
 	
+
+
+func _on_tree_exited() -> void:
+	Global.enemyCount -= 1

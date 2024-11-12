@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+var health = 1000
 var speed = 500
 var current_dir = "right"
 var bullet = load("res://scenes/skugg_bullet.tscn")
@@ -9,6 +10,10 @@ func _ready() -> void:
 	get_tree().set_auto_accept_quit(true)
 
 func _physics_process(delta: float) -> void:
+	$healthbar.set_value_no_signal(health)
+	if (health <= 0):
+		deal_with_damage()
+		
 	player_movement(delta)
 	var b 
 	if(Input.is_action_pressed("shoot") and current_dir == "right" and attackready == true):
@@ -91,3 +96,15 @@ func play_animation(movement):
 
 func _on_attacktimer_timeout() -> void:
 	attackready = true
+	
+		
+func deal_with_damage():
+	if health <= 0: 
+			self.queue_free()
+			
+
+
+func _on_playerdamagebox_area_entered(area: Area2D) -> void:
+	if(area.is_in_group("EnemyBullet")):
+		print("HIT")
+		health -=25
