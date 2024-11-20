@@ -2,11 +2,12 @@ extends Node2D
 
 var fullsizeX = DisplayServer.screen_get_size().x
 var fullsizeY = DisplayServer.screen_get_size().y
-
+var random = RandomNumberGenerator.new()
 var velocity = Vector2i(20, 20)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	get_window().position = Vector2i(random.randf() * fullsizeX * 0.645, random.randf()*fullsizeY * 0.645)
 	get_window().unresizable = true
 	get_window().borderless = true
 	

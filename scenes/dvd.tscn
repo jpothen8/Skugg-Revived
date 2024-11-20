@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://buyn45dlh8v7s"]
 
-[ext_resource type="Script" path="res://scenes/dvd.gd" id="1_hdog5"]
+[ext_resource type="Script" path="res://scripts/dvd.gd" id="1_hdog5"]
 
 [node name="Dvd" type="Node2D"]
 script = ExtResource("1_hdog5")

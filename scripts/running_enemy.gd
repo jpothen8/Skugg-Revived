@@ -24,7 +24,10 @@ func _physics_process(delta):
 		
 	
 	move_and_slide()
-	
+	print(get_window().size.x)
+	if(self.position.x <= 0.0 or self.position.x >= 1152 ):
+		speed = - speed
+		
 func _on_detection_area_body_entered(body):
 	player = body
 	player_chase = true
@@ -56,8 +59,8 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
-	speed = -speed
-
+	self.queue_free()
+	
 func choose_attack():
 	
 	var attack = random.randi_range(1,6)

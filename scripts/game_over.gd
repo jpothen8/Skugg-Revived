@@ -12,7 +12,4 @@ func _process(delta: float) -> void:
 
 
 func _on_button_button_down() -> void:
-	Global.enemies = 2
-	Global.enemyCount = 2
-	Global.reset = true
 	get_tree().change_scene_to_file("res://scenes/world.tscn")
