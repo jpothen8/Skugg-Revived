@@ -21,7 +21,7 @@ func _process(delta):
 		
 	if($RayCast2D.is_colliding() and not $RayCast2D.get_collider() == null):
 		if(($RayCast2D.get_collider()).is_in_group("player")):
-			print("Hit!")
+			
 			queue_free()
 		
 

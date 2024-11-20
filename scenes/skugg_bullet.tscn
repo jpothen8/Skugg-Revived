@@ -36,6 +36,8 @@ script = ExtResource("1_2lndb")
 sprite_frames = SubResource("SpriteFrames_dys05")
 
 [node name="Area2D" type="Area2D" parent="." groups=["PlayerBullet"]]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_kfldv")
@@ -44,6 +46,7 @@ shape = SubResource("CircleShape2D_kfldv")
 position = Vector2(-3.2, -3.6)
 target_position = Vector2(6.4, 7.2)
 collide_with_areas = true
+collide_with_bodies = false
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(-4.76837e-07, 4.76837e-07)

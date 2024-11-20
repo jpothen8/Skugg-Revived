@@ -28,7 +28,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_2v7pu"]
 radius = 5.0
 
-[node name="Bullet" type="Node2D"]
+[node name="Bullet" type="Node2D" groups=["EnemyBullet"]]
 position = Vector2(37, 47)
 scale = Vector2(1.25, 1.25)
 script = ExtResource("1_k20bn")
@@ -37,13 +37,13 @@ metadata/_edit_group_ = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ps8hq")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["EnemyBullet"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-1.52588e-06, 0)
 shape = SubResource("CircleShape2D_2v7pu")
 
-[node name="RayCast2D" type="RayCast2D" parent="."]
+[node name="RayCast2D" type="RayCast2D" parent="." groups=["EnemyBullet"]]
 position = Vector2(-3.2, -3.6)
 target_position = Vector2(6.4, 7.2)
 collide_with_areas = true

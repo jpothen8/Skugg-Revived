@@ -135,3 +135,7 @@ func rotating_attack():
 		added_rotation += PI/10
 		get_parent().add_child(b)
 	
+
+
+func _on_tree_exited() -> void:
+	Global.enemyCount -= 1
