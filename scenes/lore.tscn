@@ -1,12 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://bar0h2bknonbt"]
+[gd_scene load_steps=3 format=3 uid="uid://bar0h2bknonbt"]
 
 [ext_resource type="Script" path="res://scripts/lore.gd" id="1_yw1n7"]
+[ext_resource type="Texture2D" uid="uid://d1f4ul4paiu8k" path="res://assets/IMG_3546-1.png" id="2_peo84"]
 
 [node name="Lore" type="Node2D"]
 script = ExtResource("1_yw1n7")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(1.18763, 1.18899)
+texture = ExtResource("2_peo84")
+
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 104.0
+offset_left = 144.0
 offset_top = 92.0
 offset_right = 1048.0
 offset_bottom = 556.0

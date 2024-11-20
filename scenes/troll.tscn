@@ -1,9 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://dr8wh2ov63q0r"]
+[gd_scene load_steps=3 format=3 uid="uid://dr8wh2ov63q0r"]
 
 [ext_resource type="Script" path="res://scripts/troll.gd" id="1_1yvpg"]
+[ext_resource type="Texture2D" uid="uid://mroevnwgvxmr" path="res://assets/angry-frog.jpg" id="2_p0n4m"]
 
 [node name="troll" type="Node2D"]
 script = ExtResource("1_1yvpg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(1.3913, 0.782609)
+texture = ExtResource("2_p0n4m")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_left = 56.0

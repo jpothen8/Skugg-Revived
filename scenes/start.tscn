@@ -1,9 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://w3o81t2pe78k"]
+[gd_scene load_steps=3 format=3 uid="uid://w3o81t2pe78k"]
 
 [ext_resource type="Script" path="res://scripts/start.gd" id="1_84wol"]
+[ext_resource type="Texture2D" uid="uid://b1lqh27bcwkkp" path="res://assets/images (1).jpg" id="2_ly5ls"]
 
 [node name="Start" type="Node2D"]
 script = ExtResource("1_84wol")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(4.44788, 3.34021)
+texture = ExtResource("2_ly5ls")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_left = 75.0

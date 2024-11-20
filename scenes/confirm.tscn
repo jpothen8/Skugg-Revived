@@ -1,18 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://cv3mu2tl08fo7"]
+[gd_scene load_steps=3 format=3 uid="uid://cv3mu2tl08fo7"]
 
 [ext_resource type="Script" path="res://scripts/confirm.gd" id="1_7ratq"]
+[ext_resource type="Texture2D" uid="uid://c0023lhqiixr7" path="res://assets/cry.png" id="2_d3tr1"]
 
 [node name="confirm" type="Node2D"]
 script = ExtResource("1_7ratq")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(4.29851, 3.44681)
+texture = ExtResource("2_d3tr1")
+
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 170.0
-offset_top = 102.0
-offset_right = 948.0
-offset_bottom = 284.0
+offset_left = 181.0
+offset_top = 18.0
+offset_right = 1011.0
+offset_bottom = 200.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 25
 text = "Are you sure you don't want to read Skugg's lore? Skugg will be very sad if you don't read his lore. After all, this is Skugg Revived.
-
 Do you want to make Skugg sad?"
 
 [node name="play" type="Button" parent="."]
