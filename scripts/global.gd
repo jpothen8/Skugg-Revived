@@ -7,6 +7,7 @@ var skugg_pressed = false
 var bullet_dir = "right"
 var enemies = 2
 var enemyCount = 2
+var gameover = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.

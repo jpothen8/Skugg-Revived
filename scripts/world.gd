@@ -8,11 +8,12 @@ var newRunningEnemy = load("res://scenes/running_enemy.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
+	Global.gameover = false
 	get_tree().set_auto_accept_quit(true)
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED) 
 	Global.enemies = 2
 	Global.enemyCount = 2
-
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

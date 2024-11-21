@@ -198,6 +198,7 @@ position = Vector2(0, 11)
 shape = SubResource("RectangleShape2D_mippi")
 
 [node name="attacktimer" type="Timer" parent="."]
+wait_time = 3.0
 autostart = true
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]

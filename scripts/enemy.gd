@@ -21,6 +21,8 @@ func _physics_process(delta):
 	elif health > 0:
 		$AnimatedSprite2D.play("idle")
 	
+	if(Global.gameover == true):
+		self.queue_free()
 	move_and_slide()
 	
 
@@ -65,7 +67,12 @@ func choose_attack():
 		rotating_attack()
 		await get_tree().create_timer(0.5).timeout
 	elif(attack == 3):
-		pass
+		triple_attack(0)
+		await get_tree().create_timer(0.5).timeout
+		triple_attack(0)
+		await get_tree().create_timer(0.5).timeout
+		triple_attack(0)
+		await get_tree().create_timer(0.5).timeout
 	elif(attack == 4):
 		pass
 	elif(attack == 5):
@@ -120,8 +127,15 @@ func rotating_attack():
 		added_rotation += PI/10
 		get_parent().add_child(b)
 	
-
-
+func triple_attack(rot):
+	var added_rotation = rot
+	for i in 3:
+		var b = bullet.instantiate()
+		b.rotation = added_rotation
+		b.position = self.position + Vector2(-50.0 * sin(rot), 50.0 * cos(rot))
+		added_rotation += PI/10
+		get_parent().add_child(b)
+		
 func _on_tree_exited() -> void:
 	Global.enemyCount -= 1
 

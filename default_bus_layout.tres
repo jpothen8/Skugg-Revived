@@ -1,6 +1,6 @@
-[gd_resource type="AudioBusLayout" load_steps=2 format=3 uid="uid://11px5gf21ulw"]
+[gd_resource type="AudioBusLayout" load_steps=2 format=3 uid="uid://6pydoeta4iyg"]
 
-[sub_resource type="AudioEffectCapture" id="AudioEffectCapture_jrqv6"]
+[sub_resource type="AudioEffectCapture" id="AudioEffectCapture_hhxeh"]
 resource_name = "Capture"
 buffer_length = 1.5
 
@@ -11,5 +11,5 @@ bus/1/mute = false
 bus/1/bypass_fx = false
 bus/1/volume_db = -80.0
 bus/1/send = &"Master"
-bus/1/effect/0/effect = SubResource("AudioEffectCapture_jrqv6")
+bus/1/effect/0/effect = SubResource("AudioEffectCapture_hhxeh")
 bus/1/effect/0/enabled = true

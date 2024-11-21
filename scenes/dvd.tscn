@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://buyn45dlh8v7s"]
 
-[ext_resource type="Script" path="res://scenes/dvd.gd" id="1_hdog5"]
+[ext_resource type="Script" path="res://scripts/dvd.gd" id="1_hdog5"]
 [ext_resource type="Script" path="res://addons/godot_whisper/label_transcribe.gd" id="2_uxpee"]
 [ext_resource type="WhisperResource" path="res://addons/godot_whisper/models/ggml-small.en-q8_0.bin" id="3_0moo5"]
 [ext_resource type="Script" path="res://addons/godot_whisper/capture_stream_to_text.gd" id="4_1yw5o"]

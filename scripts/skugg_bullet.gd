@@ -21,6 +21,9 @@ func _process(delta):
 	elif(bullet_dir == "left"):
 		self.position -= Vector2(1.0, 0.0).rotated(rotation)
 		self.position -= dir * delta * bullet_speed
+	elif(bullet_dir == "up"):
+		self.position -= Vector2(0.0, 1.0).rotated(rotation)
+		self.position -= dir * delta * bullet_speed
 		
 	if($RayCast2D.is_colliding() and not $RayCast2D.get_collider() == null):
 		var collide = $RayCast2D.get_collider()
@@ -39,3 +42,5 @@ func change_dir(direction):
 		bullet_dir = "right"
 	elif(direction == "left"):
 		bullet_dir = "left"
+	elif(direction == "up"):
+		bullet_dir = "up"

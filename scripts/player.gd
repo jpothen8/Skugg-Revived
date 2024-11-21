@@ -35,6 +35,15 @@ func _physics_process(delta: float) -> void:
 		get_parent().add_child(b)
 		attackready = false
 		$attacktimer.start()
+	elif (Input.is_action_pressed("shoot") and current_dir == "up" and attackready == true):
+		Global.bullet_dir = "up"
+		b = bullet.instantiate() 
+		b.change_dir("up")
+		b.position.x = self.position.x + 5
+		b.position.y = self.position.y
+		get_parent().add_child(b)
+		attackready = false
+		$attacktimer.start()
 func player_movement(delta):
 	#Grid based player movement logic
 	if Input.is_action_pressed("ui_right"):
@@ -49,7 +58,9 @@ func player_movement(delta):
 		velocity.x = -speed
 		velocity.y = 0
 	elif Input.is_action_pressed("ui_up"):
-		#current_dir = "up"
+		
+		current_dir = "up"
+		print(current_dir)
 		play_animation(1)
 		velocity.x = 0
 		velocity.y = -speed
