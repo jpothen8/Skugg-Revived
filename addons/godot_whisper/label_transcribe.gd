@@ -1,5 +1,6 @@
 extends RichTextLabel
 
+
 func _ready():
 	custom_minimum_size.x = 400
 	bbcode_enabled = true
@@ -7,6 +8,10 @@ func _ready():
 
 func update_text():
 	text = completed_text + "[color=green]" + partial_text + "[/color]"
+	if completed_text.to_lower().contains("wow"):
+		text = "[color=blue]Great, you said wow! Nice! Now, play the bullet hell game."
+		await get_tree().create_timer(3.0).timeout
+		Global.saidWow = true
 
 func _process(_delta):
 	update_text()
@@ -21,3 +26,9 @@ func _on_speech_to_text_transcribed_msg(is_partial, new_text):
 	else:
 		if new_text!="":
 			partial_text = new_text
+
+
+func _on_reset_pressed() -> void:
+	text = ""
+	completed_text = ""
+	partial_text = ""

@@ -57,9 +57,9 @@ func _process(delta: float) -> void:
 		$RichTextLabel.text = "Skugg is happy now! He wants to play with you in "+ str(round(timer)) + " seconds! Try to tickle him!"
 	else:
 		if player_done:
-			$RichTextLabel.text = "Oh my Skibbity! You got Skugg. Now you can play the game!"
+			$RichTextLabel.text = "Oh my Skibbity! You got Skugg. Now, do something with a DVD logo..."
 			if timer < finished_game - 5.0:
-				get_tree().change_scene_to_file("res://scenes/world.tscn")
+				get_tree().change_scene_to_file("res://scenes/dvd.tscn")
 		elif timer < -50.0:
 			$RichTextLabel.text = ""
 			$bingchilling.stop()

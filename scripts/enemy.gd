@@ -8,8 +8,6 @@ var player_inattack_zone = false
 var bullet = load("res://scenes/bullet.tscn")
 var random = RandomNumberGenerator.new()
 
-
-
 func _physics_process(delta):
 	$healthbar.set_value_no_signal(health)
 	

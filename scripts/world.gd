@@ -41,4 +41,5 @@ func SpawnEnemy():
 
 
 func _on_player_tree_exited() -> void:
-	get_tree().change_scene_to_file("res://scenes/game_over.tscn")
+	if get_tree() != null:
+		get_tree().change_scene_to_file("res://scenes/game_over.tscn")

@@ -26,7 +26,6 @@ func _physics_process(delta):
 		self.queue_free()
 		
 	move_and_slide()
-	print(get_window().size.x)
 	if(self.position.x <= 0.0 or self.position.x >= 1152 ):
 		speed = - speed
 		

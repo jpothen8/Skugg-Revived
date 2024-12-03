@@ -30,4 +30,9 @@ func _process(delta: float) -> void:
 		or get_window().position.x + get_window().size.x > fullsizeX):
 		velocity = Vector2i(-velocity.x, velocity.y)
 		
+	if Global.saidWow:
+		Global.killSpeech = true
+		await get_tree().create_timer(3.0).timeout
+		get_tree().change_scene_to_file("res://scenes/world.tscn")
+		
 		

@@ -108,6 +108,8 @@ func transcribe_thread():
 		var interval_sleep = transcribe_interval * 1000 - time_processing
 		if interval_sleep > 0:
 			OS.delay_msec(interval_sleep)
+		if Global.killSpeech:
+			kill()
 
 func _has_terminating_characters(message: String, characters: String):
 	for character in characters:
@@ -140,3 +142,8 @@ func _notification(what):
 		recording = false
 		if thread.is_alive():
 			thread.wait_to_finish()
+			
+func kill():
+	recording = false
+	if thread.is_alive():
+		thread.wait_to_finish()
