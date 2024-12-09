@@ -1,7 +1,7 @@
 extends Node2D
 
 var dir = Vector2(1.0,0.0)
-var bullet_speed = 10
+var bullet_speed = 800
 var bullet_dir = "right"
 
 # Called when the node enters the scene tree for the first time.
