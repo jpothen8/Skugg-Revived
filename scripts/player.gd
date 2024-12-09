@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var health = 1000
+var health = 500 * Global.health
 var speed = 500
 var current_dir = "right"
 var bullet = load("res://scenes/skugg_bullet.tscn")
