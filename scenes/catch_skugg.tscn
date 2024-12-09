@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://ckbu86d0thman"]
+[gd_scene load_steps=7 format=3 uid="uid://ckbu86d0thman"]
 
 [ext_resource type="Script" path="res://scripts/catch_skugg.gd" id="1_axr4n"]
 [ext_resource type="AudioStream" uid="uid://4hkcbel34jsu" path="res://assets/Lebron-James.mp3" id="2_gv52u"]
 [ext_resource type="AudioStream" uid="uid://ctowpixkxkpgl" path="res://assets/thats-why-hes-the-goat.mp3" id="3_m5iv6"]
 [ext_resource type="AudioStream" uid="uid://4hbvswa5mrax" path="res://assets/john-cena-chinese-meme.mp3" id="4_i43wb"]
+[ext_resource type="AudioStream" uid="uid://cfu2x5a74vvj2" path="res://assets/audio/catching_skugg.mp3" id="5_j34vq"]
+[ext_resource type="AudioStream" uid="uid://dcljb342ytitn" path="res://assets/audio/won_skugg.mp3" id="6_insdr"]
 
 [node name="catch_skugg" type="Node2D"]
 script = ExtResource("1_axr4n")
@@ -24,3 +26,10 @@ stream = ExtResource("3_m5iv6")
 
 [node name="bingchilling" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_i43wb")
+
+[node name="instruction" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_j34vq")
+autoplay = true
+
+[node name="won" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_insdr")

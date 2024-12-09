@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dr8wh2ov63q0r"]
+[gd_scene load_steps=4 format=3 uid="uid://dr8wh2ov63q0r"]
 
 [ext_resource type="Script" path="res://scripts/troll.gd" id="1_1yvpg"]
 [ext_resource type="Texture2D" uid="uid://mroevnwgvxmr" path="res://assets/angry-frog.jpg" id="2_p0n4m"]
+[ext_resource type="AudioStream" uid="uid://bn014ralvklji" path="res://assets/audio/troll.mp3" id="3_wdslh"]
 
 [node name="troll" type="Node2D"]
 script = ExtResource("1_1yvpg")
@@ -40,5 +41,9 @@ offset_right = 1144.0
 offset_bottom = 72.0
 max_value = 8.0
 show_percentage = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_wdslh")
+autoplay = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

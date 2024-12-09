@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cv3mu2tl08fo7"]
+[gd_scene load_steps=4 format=3 uid="uid://cv3mu2tl08fo7"]
 
 [ext_resource type="Script" path="res://scripts/confirm.gd" id="1_7ratq"]
 [ext_resource type="Texture2D" uid="uid://c0023lhqiixr7" path="res://assets/cry.png" id="2_d3tr1"]
+[ext_resource type="AudioStream" uid="uid://c14pojufmdye2" path="res://assets/audio/play_game.mp3" id="3_7em2t"]
 
 [node name="confirm" type="Node2D"]
 script = ExtResource("1_7ratq")
@@ -36,6 +37,10 @@ offset_right = 982.0
 offset_bottom = 538.0
 theme_override_font_sizes/font_size = 30
 text = "Nah, I changed my mind, I wanna read his lore!"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_7em2t")
+autoplay = true
 
 [connection signal="mouse_entered" from="play" to="." method="_on_play_mouse_entered"]
 [connection signal="mouse_exited" from="play" to="." method="_on_play_mouse_exited"]

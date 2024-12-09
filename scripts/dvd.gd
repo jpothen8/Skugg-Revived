@@ -19,7 +19,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	
 	get_window().position += velocity
 	
 	if (get_window().position.y < 0
@@ -33,6 +32,7 @@ func _process(delta: float) -> void:
 	if Global.saidWow:
 		Global.killSpeech = true
 		await get_tree().create_timer(3.0).timeout
+		get_window().borderless = false
 		get_tree().change_scene_to_file("res://scenes/world.tscn")
 		
 		

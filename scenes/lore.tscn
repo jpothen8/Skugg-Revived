@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bar0h2bknonbt"]
+[gd_scene load_steps=4 format=3 uid="uid://bar0h2bknonbt"]
 
 [ext_resource type="Script" path="res://scripts/lore.gd" id="1_yw1n7"]
 [ext_resource type="Texture2D" uid="uid://d1f4ul4paiu8k" path="res://assets/IMG_3546-1.png" id="2_peo84"]
+[ext_resource type="AudioStream" uid="uid://iyaeiivtupss" path="res://assets/audio/lore.mp3" id="3_38wj0"]
 
 [node name="Lore" type="Node2D"]
 script = ExtResource("1_yw1n7")
@@ -14,7 +15,7 @@ texture = ExtResource("2_peo84")
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_left = 144.0
 offset_top = 92.0
-offset_right = 1048.0
+offset_right = 1072.0
 offset_bottom = 556.0
 theme_override_font_sizes/normal_font_size = 25
 text = "You have to wait at least 15 seconds to go back to the menu screen. It would be disrespectful to Skugg if you didn't read his lore. The more you spam the back button, the more you have to wait.
@@ -39,5 +40,9 @@ offset_bottom = 72.0
 max_value = 15.0
 value = 15.0
 show_percentage = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_38wj0")
+autoplay = true
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

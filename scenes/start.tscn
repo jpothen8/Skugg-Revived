@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://w3o81t2pe78k"]
+[gd_scene load_steps=4 format=3 uid="uid://w3o81t2pe78k"]
 
 [ext_resource type="Script" path="res://scripts/start.gd" id="1_84wol"]
 [ext_resource type="Texture2D" uid="uid://b1lqh27bcwkkp" path="res://assets/images (1).jpg" id="2_ly5ls"]
+[ext_resource type="AudioStream" uid="uid://cnjps8ucescqd" path="res://assets/audio/opening.mp3" id="3_fnls3"]
 
 [node name="Start" type="Node2D"]
 script = ExtResource("1_84wol")
@@ -13,9 +14,9 @@ texture = ExtResource("2_ly5ls")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_left = 75.0
-offset_top = 127.0
+offset_top = 70.0
 offset_right = 1092.0
-offset_bottom = 246.0
+offset_bottom = 189.0
 theme_override_font_sizes/normal_font_size = 75
 text = "Welcome to Skugg Revived!
 "
@@ -35,6 +36,10 @@ offset_right = 731.0
 offset_bottom = 469.0
 theme_override_font_sizes/font_size = 35
 text = "Read the Lore"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_fnls3")
+autoplay = true
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Info" to="." method="_on_info_pressed"]

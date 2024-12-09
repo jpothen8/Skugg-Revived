@@ -98,4 +98,6 @@ func _process(delta: float) -> void:
 			get_window().unresizable = false
 			get_window().borderless = false
 			get_window().size = Vector2i(1152, 648)
+			$instruction.stop()
+			$won.play()
 			finished_game = timer

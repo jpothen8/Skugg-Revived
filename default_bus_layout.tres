@@ -1,10 +1,19 @@
-[gd_resource type="AudioBusLayout" load_steps=2 format=3 uid="uid://6pydoeta4iyg"]
+[gd_resource type="AudioBusLayout" load_steps=3 format=3 uid="uid://6pydoeta4iyg"]
+
+[sub_resource type="AudioEffectDistortion" id="AudioEffectDistortion_nsp0n"]
+resource_name = "Distortion"
+pre_gain = 20.0
+keep_hf_hz = 20000.0
+drive = 0.05
+post_gain = 0.87
 
 [sub_resource type="AudioEffectCapture" id="AudioEffectCapture_hhxeh"]
 resource_name = "Capture"
 buffer_length = 1.5
 
 [resource]
+bus/0/effect/0/effect = SubResource("AudioEffectDistortion_nsp0n")
+bus/0/effect/0/enabled = true
 bus/1/name = &"Record"
 bus/1/solo = false
 bus/1/mute = false
