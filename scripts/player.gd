@@ -10,7 +10,7 @@ func _ready() -> void:
 	get_tree().set_auto_accept_quit(true)
 
 func _physics_process(delta: float) -> void:
-	$healthbar.set_value_no_signal(health)
+	$health.set_value_no_signal(health)
 	if (health <= 0):
 		deal_with_damage()
 		

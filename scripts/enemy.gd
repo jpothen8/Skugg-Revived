@@ -9,7 +9,7 @@ var bullet = load("res://scenes/bullet.tscn")
 var random = RandomNumberGenerator.new()
 
 func _physics_process(delta):
-	$healthbar.set_value_no_signal(health)
+	$health.set_value_no_signal(health)
 	
 	if (health <= 0):
 		deal_with_damage()
@@ -39,7 +39,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	if(area.is_in_group("PlayerBullet")):
-		health -=25
+		health -= 25 * Global.dmg
 
 
 

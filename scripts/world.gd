@@ -7,7 +7,7 @@ var newEnemy = load("res://scenes/enemy.tscn")
 var newRunningEnemy = load("res://scenes/running_enemy.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
+	SpawnEnemy()
 	Global.gameover = false
 	get_tree().set_auto_accept_quit(true)
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED) 
@@ -19,13 +19,14 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	
 	if(Global.enemyCount <= 0):
-		SpawnEnemy()
+		Global.enemies += 1
+		get_tree().change_scene_to_file("res://scenes/path.tscn")
+		
 
 
 
 func SpawnEnemy():
 	print("RUNNING NEW ENEMY")
-	Global.enemies += 1
 	Global.enemyCount = Global.enemies
 	for i in Global.enemyCount:
 		var randomize = random.randi_range(1,2)

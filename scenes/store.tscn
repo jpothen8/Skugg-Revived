@@ -1,10 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://131xnbym8j0t"]
+[gd_scene load_steps=2 format=3 uid="uid://131xnbym8j0t"]
 
-[ext_resource type="Script" path="res://store.gd" id="1_fpjjb"]
-[ext_resource type="PackedScene" uid="uid://c4geg5nllqf86" path="res://scenes/player.tscn" id="2_ombw3"]
+[ext_resource type="Script" path="res://scripts/store.gd" id="1_a132c"]
 
 [node name="Store" type="Node2D"]
-script = ExtResource("1_fpjjb")
+script = ExtResource("1_a132c")
 
 [node name="HealthUp" type="Button" parent="."]
 offset_left = 71.0
@@ -31,7 +30,14 @@ offset_bottom = 184.0
 theme_override_font_sizes/normal_font_size = 111
 text = "STORE"
 
-[node name="Player" parent="." instance=ExtResource("2_ombw3")]
+[node name="skip" type="Button" parent="."]
+offset_left = 406.0
+offset_top = 548.0
+offset_right = 747.0
+offset_bottom = 632.0
+theme_override_font_sizes/font_size = 55
+text = "SKIP"
 
 [connection signal="button_down" from="HealthUp" to="." method="_on_health_up_button_down"]
 [connection signal="button_down" from="DmgUp" to="." method="_on_dmg_up_button_down"]
+[connection signal="button_down" from="skip" to="." method="_on_skip_button_down"]
