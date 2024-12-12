@@ -30,9 +30,11 @@ func _process(delta: float) -> void:
 		velocity = Vector2i(-velocity.x, velocity.y)
 		
 	if Global.saidWow:
+		Global.saidWow = false
+		$instruction.stop()
+		$won.play()
 		Global.killSpeech = true
 		await get_tree().create_timer(3.0).timeout
 		get_window().borderless = false
 		get_tree().change_scene_to_file("res://scenes/instructions.tscn")
-		
 		

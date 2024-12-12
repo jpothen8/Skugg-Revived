@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://buyn45dlh8v7s"]
+[gd_scene load_steps=8 format=3 uid="uid://buyn45dlh8v7s"]
 
 [ext_resource type="Script" path="res://scripts/dvd.gd" id="1_hdog5"]
 [ext_resource type="Script" path="res://addons/godot_whisper/label_transcribe.gd" id="2_uxpee"]
-[ext_resource type="WhisperResource" path="res://addons/godot_whisper/models/ggml-small.en-q8_0.bin" id="3_lb1ew"]
+[ext_resource type="WhisperResource" path="res://addons/godot_whisper/models/ggml-base.en-q8_0.bin" id="3_pf0ks"]
 [ext_resource type="Script" path="res://addons/godot_whisper/capture_stream_to_text.gd" id="4_1yw5o"]
 [ext_resource type="AudioStream" uid="uid://blfs0f66jfg37" path="res://assets/audio/DVD.mp3" id="5_c0y6w"]
+[ext_resource type="AudioStream" uid="uid://bb3hh5hen6hok" path="res://assets/audio/won_won.mp3" id="6_4tucv"]
 
 [sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_4noql"]
 
@@ -22,7 +23,7 @@ scroll_following = true
 script = ExtResource("2_uxpee")
 
 [node name="SpeechToText" type="SpeechToText" parent="."]
-language_model = ExtResource("3_lb1ew")
+language_model = ExtResource("3_pf0ks")
 script = ExtResource("4_1yw5o")
 
 [node name="recorder" type="AudioStreamPlayer" parent="."]
@@ -47,9 +48,12 @@ offset_bottom = 608.0
 theme_override_font_sizes/normal_font_size = 50
 text = "Skugg says to say the word \"WOW\""
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="instruction" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_c0y6w")
 autoplay = true
+
+[node name="won" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_4tucv")
 
 [connection signal="transcribed_msg" from="SpeechToText" to="RichTextLabel" method="_on_speech_to_text_transcribed_msg"]
 [connection signal="pressed" from="Reset" to="RichTextLabel" method="_on_reset_pressed"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://d2cs84dh5gwn4"]
+[gd_scene load_steps=3 format=3 uid="uid://d2cs84dh5gwn4"]
 
 [ext_resource type="Script" path="res://scenes/instructions.gd" id="1_3fp8g"]
+[ext_resource type="AudioStream" uid="uid://drllharh353r3" path="res://assets/audio/transition.mp3" id="2_4he2q"]
 
 [node name="instructions" type="Node2D"]
 script = ExtResource("1_3fp8g")
@@ -35,4 +36,19 @@ offset_bottom = 576.0
 theme_override_font_sizes/font_size = 35
 text = "Continue to THE REAL GAME"
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_4he2q")
+autoplay = true
+
+[node name="dontpress" type="Button" parent="."]
+offset_left = 832.0
+offset_top = 384.0
+offset_right = 1088.0
+offset_bottom = 448.0
+theme_override_font_sizes/font_size = 20
+text = "DON'T PRESS THIS BRUH"
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="mouse_entered" from="dontpress" to="." method="_on_dontpress_mouse_entered"]
+[connection signal="mouse_exited" from="dontpress" to="." method="_on_dontpress_mouse_exited"]
+[connection signal="pressed" from="dontpress" to="." method="_on_dontpress_pressed"]
