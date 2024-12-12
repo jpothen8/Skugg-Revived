@@ -9,9 +9,9 @@ script = ExtResource("2_sqbnh")
 [node name="CollisionShape2D" parent="hitbox" index="0"]
 position = Vector2(0, 12)
 
-[node name="VisibleOnScreenNotifier2D2" type="VisibleOnScreenNotifier2D" parent="." index="6"]
-
-[node name="attacktimer" parent="." index="7" groups=["Enemy"]]
+[node name="attacktimer" parent="." index="4" groups=["Enemy"]]
 wait_time = 2.0
+
+[node name="VisibleOnScreenNotifier2D2" type="VisibleOnScreenNotifier2D" parent="." index="6"]
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D2" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
