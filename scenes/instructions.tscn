@@ -1,10 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://d2cs84dh5gwn4"]
+[gd_scene load_steps=4 format=3 uid="uid://d2cs84dh5gwn4"]
 
 [ext_resource type="Script" path="res://scenes/instructions.gd" id="1_3fp8g"]
 [ext_resource type="AudioStream" uid="uid://drllharh353r3" path="res://assets/audio/transition.mp3" id="2_4he2q"]
+[ext_resource type="Texture2D" uid="uid://5fh4boliow0b" path="res://assets/instruction_background.jpg" id="2_j8y4u"]
 
 [node name="instructions" type="Node2D"]
 script = ExtResource("1_3fp8g")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_j8y4u")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 anchors_preset = 8
@@ -12,20 +18,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 64.0
-offset_top = 64.0
-offset_right = 1088.0
-offset_bottom = 512.0
+offset_left = 101.0
+offset_top = 136.0
+offset_right = 909.0
+offset_bottom = 500.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/normal_font_size = 25
 text = "Great! You finally passed all the minigames. Skugg knows these may have felt a bit like a troll, but don't worry its all just a game!
 
 Anyways, now you get to play the actual game. Skugg just wanted to play with you before his final mission. He's going to be put in a bullet hell, and since you gained his trust, you will get to control Skugg!
 
-Use your arrow keys to move and space to shoot.
-
-Dodge the bullets and try not to die!"
+Use your arrow keys to move and space to shoot. Dodge the bullets and try not to die!"
 fit_content = true
 
 [node name="Button" type="Button" parent="."]
