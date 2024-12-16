@@ -8,13 +8,13 @@ func _ready():
 
 func update_text():
 	text = completed_text + "[color=green]" + partial_text + "[/color]"
-	if completed_text.to_lower().contains("wow"):
-		text = "[color=blue]Great, you said wow! Nice! Now, play the bullet hell game."
-		await get_tree().create_timer(3.0).timeout
+	if completed_text.to_lower().contains("wow") or partial_text.to_lower().contains("wow"):
+		text = "[color=lightblue]Amazing, you said wow! Nice! Now, play the bullet hell game."
 		Global.saidWow = true
 
 func _process(_delta):
-	update_text()
+	if !Global.killSpeech:
+		update_text()
 
 var completed_text := ""
 var partial_text := ""
