@@ -25,11 +25,6 @@ func _process(delta):
 		self.position -= Vector2(0.0, 1.0).rotated(rotation)
 		self.position -= dir * delta * bullet_speed
 		
-	if($RayCast2D.is_colliding() and not $RayCast2D.get_collider() == null):
-		var collide = $RayCast2D.get_collider()
-		if($RayCast2D.get_collider()).is_in_group("Enemy"):
-			#await get_tree().create_timer(0.25).timeout
-			queue_free()
 		
 
 

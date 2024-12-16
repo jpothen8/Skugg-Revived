@@ -10,10 +10,10 @@
 script = ExtResource("1_niku3")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = 1157.0
-offset_top = 5.0
-offset_right = 2309.0
-offset_bottom = 652.0
+offset_left = -2.0
+offset_top = 4.0
+offset_right = 1150.0
+offset_bottom = 651.0
 
 [node name="Player" parent="." instance=ExtResource("1_7sp3p")]
 scale = Vector2(0.25, 0.25)
@@ -22,13 +22,19 @@ scale = Vector2(0.25, 0.25)
 position = Vector2(30, -32)
 scale = Vector2(1.5, 1.5)
 
-[node name="RunningEnemy" parent="." groups=["enemy"] instance=ExtResource("4_dfkc5")]
+[node name="RunningEnemy" parent="." groups=["Enemy", "enemy"] instance=ExtResource("4_dfkc5")]
 position = Vector2(122, 55)
 collision_layer = 1
 collision_mask = 1
 metadata/_edit_group_ = true
 
 [node name="enemy" parent="." instance=ExtResource("2_hd7g0")]
+
+[node name="CoinCount" type="RichTextLabel" parent="."]
+offset_left = 1097.0
+offset_top = 20.0
+offset_right = 1137.0
+offset_bottom = 60.0
 
 [connection signal="tree_exited" from="Player" to="." method="_on_player_tree_exited"]
 [connection signal="tree_exited" from="RunningEnemy" to="." method="_on_running_enemy_tree_exited"]

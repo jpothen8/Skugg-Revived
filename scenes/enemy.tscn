@@ -141,7 +141,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sndli"]
-size = Vector2(33, 41.5)
+size = Vector2(67, 51.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mippi"]
 size = Vector2(48, 47.75)
@@ -152,7 +152,7 @@ bg_color = Color(1, 1, 1, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yjq8j"]
 bg_color = Color(0.855193, 0, 0.218466, 1)
 
-[node name="enemy" type="CharacterBody2D" groups=["Enemy"]]
+[node name="enemy" type="CharacterBody2D"]
 position = Vector2(417, 262)
 collision_layer = 2
 collision_mask = 2
@@ -168,18 +168,19 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
-position = Vector2(-2.5, 11.75)
+position = Vector2(-0.5, 6.75)
 shape = SubResource("RectangleShape2D_sndli")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-1, 8.875)
 shape = SubResource("RectangleShape2D_mippi")
 
 [node name="attacktimer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 6.0
 autostart = true
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]

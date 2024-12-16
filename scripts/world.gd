@@ -11,15 +11,14 @@ func _ready() -> void:
 	Global.gameover = false
 	get_tree().set_auto_accept_quit(true)
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED) 
-	Global.enemies = 2
-	Global.enemyCount = 2
+	
+	
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
 	if(Global.enemyCount <= 0):
-		Global.enemies += 1
 		get_tree().change_scene_to_file("res://scenes/path.tscn")
 		
 
@@ -27,8 +26,8 @@ func _process(delta: float) -> void:
 
 func SpawnEnemy():
 	print("RUNNING NEW ENEMY")
-	Global.enemyCount = Global.enemies
-	for i in Global.enemyCount:
+	#Global.enemyCount = Global.enemies 
+	for i in Global.enemies:
 		var randomize = random.randi_range(1,2)
 		if(randomize == 1):
 			NewEnemy = newEnemy.instantiate()

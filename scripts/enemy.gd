@@ -40,8 +40,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	if(area.is_in_group("PlayerBullet")):
 		health -= 25 * Global.dmg
-
-
+		area.queue_free()
 
 func choose_attack():
 	
@@ -140,3 +139,8 @@ func _on_tree_exited() -> void:
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	self.queue_free()
+
+
+func _on_hitbox_body_entered(body: Node2D) -> void:
+	if(body.is_in_group("PlayerBullet")):
+		health -= 25 * Global.dmg

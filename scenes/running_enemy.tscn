@@ -10,7 +10,6 @@ script = ExtResource("2_sqbnh")
 position = Vector2(0, 12)
 
 [node name="attacktimer" parent="." index="4" groups=["Enemy"]]
-wait_time = 2.0
 
 [node name="VisibleOnScreenNotifier2D2" type="VisibleOnScreenNotifier2D" parent="." index="6"]
 
