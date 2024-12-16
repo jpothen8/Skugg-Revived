@@ -143,3 +143,4 @@ func rotating_attack():
 
 func _on_tree_exited() -> void:
 	Global.enemyCount -= 1
+	Global.coins += 1

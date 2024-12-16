@@ -135,6 +135,7 @@ func triple_attack(rot):
 		
 func _on_tree_exited() -> void:
 	Global.enemyCount -= 1
+	Global.coins += 1
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:

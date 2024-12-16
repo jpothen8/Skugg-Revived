@@ -12,12 +12,22 @@ func _process(delta: float) -> void:
 
 
 func _on_health_up_button_down() -> void:
-	Global.health += .25
-	get_tree().change_scene_to_file("res://scenes/world.tscn")
+	if(Global.coins > 1):
+		Global.health += .25
+		print("health up")
+		Global.coins -= 2
+	else: 
+		print("no money")
+	#get_tree().change_scene_to_file("res://scenes/world.tscn")
 
 func _on_dmg_up_button_down() -> void:
-	Global.dmg += .25
-	get_tree().change_scene_to_file("res://scenes/world.tscn")
+	if(Global.coins > 1):
+		Global.dmg += .25
+		print("dmg up")
+		Global.coins -= 2
+	else: 
+		print("no money")
+	#get_tree().change_scene_to_file("res://scenes/world.tscn")
 
 func _on_skip_button_down() -> void:
 	get_tree().change_scene_to_file("res://scenes/world.tscn")
