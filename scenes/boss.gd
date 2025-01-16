@@ -44,15 +44,31 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 
 func choose_attack():
 	
-	var attack = random.randi_range(1,6)
+	var attack = random.randi_range(1,4)
 	if(attack == 1):
 		pass
 		circle_attack()
-		await get_tree().create_timer(1.0).timeout
+		await get_tree().create_timer(0.5).timeout
 		circle_attack()
-		await get_tree().create_timer(1.0).timeout
+		await get_tree().create_timer(0.5).timeout
+		circle_attack()
+		await get_tree().create_timer(0.5).timeout
+		circle_attack()
+		await get_tree().create_timer(0.5).timeout
+		circle_attack()
+		await get_tree().create_timer(0.5).timeout
+		circle_attack()
+		await get_tree().create_timer(0.25).timeout
 		circle_attack()
 	elif(attack == 2):
+		rotating_attack()
+		await get_tree().create_timer(0.5).timeout
+		rotating_attack()
+		await get_tree().create_timer(0.5).timeout
+		rotating_attack()
+		await get_tree().create_timer(0.5).timeout
+		rotating_attack()
+		await get_tree().create_timer(0.5).timeout
 		rotating_attack()
 		await get_tree().create_timer(0.5).timeout
 		rotating_attack()
@@ -70,11 +86,17 @@ func choose_attack():
 		await get_tree().create_timer(0.5).timeout
 		triple_attack(0)
 		await get_tree().create_timer(0.5).timeout
+		triple_attack(0)
+		await get_tree().create_timer(0.5).timeout
+		triple_attack(0)
+		await get_tree().create_timer(0.5).timeout
+		triple_attack(0)
+		await get_tree().create_timer(0.5).timeout
+		triple_attack(0)
+		await get_tree().create_timer(0.5).timeout
+		triple_attack(0)
+		await get_tree().create_timer(0.5).timeout
 	elif(attack == 4):
-		pass
-	elif(attack == 5):
-		pass
-	elif(attack == 6):
 		pass
 
 func _on_attacktimer_timeout() -> void:

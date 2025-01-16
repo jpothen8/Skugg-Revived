@@ -31,7 +31,7 @@ func SpawnEnemy():
 	#Global.enemyCount = Global.enemies 
 	if ((Global.enemies - 2) % 4 == 0):
 		NewBoss = newBoss.instantiate()
-		NewBoss.position = Vector2(random.randi_range(50,200),random.randi_range(50,200))
+		NewBoss.position = Vector2(random.randi_range(500,700),random.randi_range(300,500))
 		get_parent().add_child(NewBoss)
 	else:
 		for i in Global.enemies:
